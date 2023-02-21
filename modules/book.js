@@ -14,7 +14,6 @@ export default class Books {
       });
     }
 
-    // eslint-disable-next-line consistent-return
     getBookFromLocalStorage = () => {
       const storedBooks = window.localStorage.getItem(this.storageName);
       if (storedBooks) {
@@ -30,12 +29,10 @@ export default class Books {
       this.bookTitle.value = '';
     }
 
-    // eslint-disable-next-line max-len
     saveBookToLocalStorage = () => {
       window.localStorage.setItem(this.storageName, JSON.stringify(this.bookCollection));
     };
 
-    // eslint-disable-next-line max-len, no-return-assign
     removeBook = (item) => {
       this.bookCollection = this.bookCollection.filter((_book, index) => item !== index);
     };
